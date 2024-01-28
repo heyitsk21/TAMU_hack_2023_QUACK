@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/drive-viewer/AEYmBYQyNacDMiZLdwG-i9TF4YS__ZTq4gIuPLAyCCob9povRYxc-QQBRtdoDThtO4M8qU_3LZcrSe2u7q-5SX_uoByRG61Xjw=s1600">
+
+
+</head>
+
+<body>
+  <nav class=navibar>
+    <a class="row_button" href="index.html">Home</a>
+    <a class="row_button" href="flashcards.html">Flashcards</a>
+  </nav>
+  <hr>
+</body>
+
+<body onload="NextQuestion(0)">
+  <main>
+    <!-- creating a modal for when quiz ends -->
+    <div class="modal-container" id="score-modal">
+
+      <div class="modal-content-container">
+
+        <h1>Congratulations, Quiz Completed.</h1>
+
+        <div class="grade-details">
+          <p>Attempts : 10</p>
+          <p>Wrong Answers : <span id="wrong-answers"></span></p>
+          <p>Right Answers : <span id="right-answers"></span></p>
+          <p>Grade : <span id="grade-percentage"></span>%</p>
+          <p><span id="remarks"></span></p>
+        </div>
+
+        <div class="modal-button-container">
+          <button onclick="closeScoreModal()">Continue</button>
+        </div>
+
+      </div>
+    </div>
+    <!-- end of modal of quiz details-->
+
+    <div class="game-quiz-container">
+
+
+      <div class="game-question-container">
+        <h1 id="howdy">Howdy! Come learn about Science, Technology, Engineering, and Math with us!</h1>
+      </div>
+
+      <div class="game-options-container">
+
+        <div class="modal-container" id="option-modal">
+
+          <div class="modal-content-container">
+            <h1>Please Pick An Option</h1>
+
+            <div class="modal-button-container">
+              <button onclick="closeOptionModal()">Continue</button>
+            </div>
+
+          </div>
+
+        </div>
+
+        <span>
+          <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+          <label for="option-one" class="option" id="option-one-label"><a href="science.html">Science</a></label>
+        </span>
+        <!-- <a href="destination.html" target="_blank">
+          <button style="background-color: blue; color: white;">Click Me!</button>
+        </a> -->
+        <!-- <button onclick="window.location.href='destination.html'">Science</button> -->
+        <span>
+          <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+          <label for="option-two" class="option" id="option-two-label"><a href="technology.html">Technology</a></label>
+        </span>
+
+
+        <span>
+          <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+          <label for="option-three" class="option" id="option-three-label"><a href="engineering.html">Engineering</a></label>
+        </span>
+
+
+        <span>
+          <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+          <label for="option-four" class="option" id="option-four-label"><a href="math.html">Math</a></label>
+        </span>
+
+
+      </div>
+
+      <!-- <div class="next-button-container">
+        <button onclick="handleNextQuestion()">Next Question</button>
+      </div> -->
+
+    </div>
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+

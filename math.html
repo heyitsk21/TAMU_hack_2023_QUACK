@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Multiplication Problem</title>
+</head>
+<body>
+
+  <h2>Random Multiplication Problem</h2>
+
+  <div>
+    <p id="multiplicationProblem"></p>
+    <label for="answer">Your Answer: </label>
+    <input type="text" id="answer" />
+    <button onclick="checkAnswer()">Check Answer</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    let currentProblem = {};
+
+    // Function to generate a random multiplication problem
+    function generateRandomProblem() {
+      const multiplier = Math.floor(Math.random() * 12) + 1;
+      const multiplicand = Math.floor(Math.random() * 12) + 1;
+      const product = multiplier * multiplicand;
+
+      return { multiplier, multiplicand, product };
+    }
+
+    // Function to display a random multiplication problem
+    function displayRandomProblem() {
+      const problemElement = document.getElementById('multiplicationProblem');
+      const answerElement = document.getElementById('answer');
+      const resultElement = document.getElementById('result');
+
+      // Generate a random problem
+      currentProblem = generateRandomProblem();
+
+      // Display the problem
+      problemElement.textContent = `${currentProblem.multiplier} × ${currentProblem.multiplicand} = `;
+      answerElement.value = ''; // Clear the previous answer
+      resultElement.textContent = ''; // Clear the previous result
+    }
+
+    // Function to check the user's answer
+    function checkAnswer() {
+      const answerElement = document.getElementById('answer');
+      const resultElement = document.getElementById('result');
+
+      // Get the user's answer and the correct answer
+      const userAnswer = parseInt(answerElement.value, 10);
+      const correctAnswer = currentProblem.product;
+
+      // Check the answer and display the result
+      if (userAnswer === correctAnswer) {
+        resultElement.textContent = 'Correct!';
+        // Display a new random problem
+        displayRandomProblem();
+      } else {
+        resultElement.textContent = 'Incorrect. Try again.';
+      }
+    }
+
+    // Event listener for the "Enter" key
+    document.getElementById('answer').addEventListener('keyup', function (event) {
+      if (event.key === 'Enter') {
+        checkAnswer();
+      }
+    });
+
+    // Initial display
+    displayRandomProblem();
+  </script>
+
+</body>
+</html>
