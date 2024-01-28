@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Multiplication Problem</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="ducky.png">
 </head>
+
+  <body>
+    <nav class=navibar>
+      <a class="row_button" href="index.html">Home</a>
+      <h1 class="title1">🐤</h1>
+      <a class="row_button" href="flashcards.html">Flashcards</a>
+    </nav>
+  </body>
+
+  
 <body>
+<main>
 
-  <h2>Random Multiplication Problem</h2>
+<div class="mathbox">
+  <h2 class="mathheader">Random Multiplication Problem</h2>
 
-  <div>
-    <p id="multiplicationProblem"></p>
-    <label for="answer">Your Answer: </label>
-    <input type="text" id="answer" />
-    <button onclick="checkAnswer()">Check Answer</button>
+  <div class="multiply">
+    <p class="problem" id="multiplicationProblem"></p>
+    <label class = "mathp" for="answer">Your Answer: </label>
+    <input class = "answerbox" type="text" id="answer" />
+    <hr>
+    <button class="mathbutt" onclick="checkAnswer()">Check Answer</button>
+    <hr>
+    <button class="mathbutt" onclick="displayRandomProblem()">Next Problem</button>
     <p id="result"></p>
   </div>
+</div>
 
   <script>
     let currentProblem = {};
@@ -57,11 +79,13 @@
       if (userAnswer === correctAnswer) {
         resultElement.textContent = 'Correct!';
         // Display a new random problem
-        displayRandomProblem();
+        // displayRandomProblem();
       } else {
         resultElement.textContent = 'Incorrect. Try again.';
       }
+
     }
+
 
     // Event listener for the "Enter" key
     document.getElementById('answer').addEventListener('keyup', function (event) {
@@ -74,5 +98,7 @@
     displayRandomProblem();
   </script>
 
+</main>
 </body>
+
 </html>
